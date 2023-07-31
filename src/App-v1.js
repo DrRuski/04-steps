@@ -10,6 +10,7 @@ export default function App() {
   return (
     <div>
       <Steps />
+      <Steps />
     </div>
   );
 }
@@ -37,39 +38,25 @@ function Steps() {
           </p>
 
           <div className="buttons">
-            <Button
-              bgColor="#7950f1"
-              textColor="#fff"
+            <button
+              style={{ backgroundColor: "#7950f1", color: "#fff" }}
               onClick={() => {
                 step > 1 && setStep((s) => s - 1);
               }}
             >
-              <span>👈</span>Previous
-            </Button>
-
-            <Button
-              bgColor="#7950f1"
-              textColor="#fff"
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f1", color: "#fff" }}
               onClick={() => {
                 step < 3 && setStep((s) => s + 1);
               }}
             >
-              Next <span>👉</span>
-            </Button>
+              Next
+            </button>
           </div>
         </div>
       )}
     </div>
-  );
-}
-
-function Button({ textColor, bgColor, onClick, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
   );
 }
